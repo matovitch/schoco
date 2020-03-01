@@ -1,0 +1,4 @@
+include_rules
+
+: foreach $(BIN_SCHOCO_CPP) |> !cx |> %B.o <obj>
+: foreach $(BIN_SCHOCO_OBJ) | <obj> $(ROOT)/<lib_schoco> |> !cl |> %B.bin $(ROOT)/<bin_schoco>

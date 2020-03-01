@@ -1,0 +1,10 @@
+BIN_SCHOCO_CPP = $(ROOT)/src/schoco/*.cpp
+BIN_SCHOCO_OBJ = $(ROOT)/src/schoco/*.o
+
+# Note: There is a bug with tup and the binary cannot be named 'schoco'
+#       Not exactly sure as to why... :/
+# BIN_SCHOCO_OUT = schoco.bin
+
+# Note: The linker need the libs in topological order
+CLFLAGS += -l schoco
+CLFLAGS += -L $(ROOT)/lib/src/schoco

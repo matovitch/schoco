@@ -1,0 +1,2 @@
+LIB_SCHOCO     = $(LIB_SRC)/schoco
+LIB_SCHOCO_OUT = libschoco.a

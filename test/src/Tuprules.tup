@@ -1,0 +1,13 @@
+BIN_TEST_CPP = $(ROOT)/test/src/*.cpp
+BIN_TEST_OUT = test
+
+CXFLAGS += -I $(ROOT)/test/src
+
+# Note: The linker need the libs in topological order
+CLFLAGS += -l doctest
+CLFLAGS += -l schoco
+CLFLAGS += -l base64
+
+CLFLAGS += -L $(ROOT)/lib/src/doctest
+CLFLAGS += -L $(ROOT)/lib/src/schoco
+CLFLAGS += -L $(ROOT)/lib/src/base64

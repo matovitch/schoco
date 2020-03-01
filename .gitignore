@@ -1,0 +1,5 @@
+.tup
+bin/*
+!bin/tup.config
+compile_commands.json
+*.sublime-workspace
