@@ -41,8 +41,6 @@ struct TEntryPoint
     static thread_local TaskHandle _next;
 };
 
-
-
 template <std::size_t SIZE>
 thread_local typename TEntryPoint<SIZE>::TaskHandle TEntryPoint<SIZE>::_next;
 
@@ -56,8 +54,6 @@ class THandleWrapper;
 
 template <std::size_t>
 class TScheduler;
-
-
 
 template <std::size_t SIZE>
 class TTask

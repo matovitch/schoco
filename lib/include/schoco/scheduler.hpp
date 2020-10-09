@@ -53,7 +53,7 @@ public:
         _futures   {poolSetScheduler._poolFuture},
         _futuresPollDelay{futuresPollDelay}
     {
-         schoco_details::coroutine::mmxFpuSave(schoco_details::coroutine::MMX_FPU_STATE);
+        schoco_details::coroutine::mmxFpuSave(schoco_details::coroutine::MMX_FPU_STATE);
     }
 
     template <std::size_t STACK_SIZE>
@@ -213,15 +213,14 @@ private:
 
             const auto opt = (*it)->_value.template returnOpt<bool>();
 
-            if (opt.value())
-            {
-                _taskGraph.pop(*it);
-                it = _futures.erase(it);
-            }
-            else
+            if (!opt.value())
             {
                 it++;
+                continue;
             }
+
+            _taskGraph.pop(*it);
+            it = _futures.erase(it);
         }
     }
 
